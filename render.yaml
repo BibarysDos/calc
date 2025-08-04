@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: calculator-service
+    env: python
+    repo: https://github.com/yourusername/your-repo-calculator-service.git
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.16
